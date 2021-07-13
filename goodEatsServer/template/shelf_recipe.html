@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="common_style.css">
+    <link rel="stylesheet" href="recipe_style.css">
+    <head>
+        <title>Recipe</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="/logout" method="POST" id="logoutForm"></form>
+        <div class = "menu">
+            <a href="/"><div class="menuItem" style="float: left;"><p>Home</p></div></a>
+            <a href="/shelves"><div class="menuItem" style="float: left;"><p>My Shelves</p></div></a>
+            <a href="javascript:void(0)" onclick='document.getElementById("logoutForm").submit()'><div class="menuItem" style="float: right;"><p>Logout</p></div></a>
+            <div class="menuItem" style="float: left; background-color: #5E8B7E;"><p>Recipe</p></div>
+        </div>
+        <div class="pagePart" id="recipes" style="width: 65%; float: left;">
+            <!--Recipe is added here-->
+        </div>
+        <div class="pagePart" id="ratePart">
+            <form action="/rate" method="post">
+                <h3>Rate</h3><br>
+                <label for="rating">Rate: </label>
+                <input type="range" name="rating" id="rating" min="0" max="5" step="0.1" value="0" class="formPart"
+                onchange="document.getElementById('ratingLabel').innerHTML = this.value">
+                <label for="rating" id="ratingLabel">0</label><br><br>
+                <input type="hidden" name="recipeId" id="recipeId" value="">
+                <input type="submit" value="Rate" class="formPartButton">
+                <% cout << "<a href='/shelf?shelfId=" << context["shelfId"] << "'><input type='button' value='Return To Shelf' class='formPartButton' style='width: 50%'></a>"; %>
+            </form>
+        </div>
+        <script src="recipe_class.js"></script>
+        <% cout << "<script src = 'recipe_info.js?id=" << context["id"] << "'></script>"; %>
+        <script src="add_recipe_info.js"></script>
+    </body>
+</html>

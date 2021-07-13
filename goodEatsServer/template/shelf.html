@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="common_style.css">
+    <link rel="stylesheet" href="shelf_style.css">
+    <head>
+        <title>Shelf</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="/logout" method="POST" id="logoutForm"></form>
+        <%
+            cout << "<form action='/edit_shelf_recipes?shelfId=" << context["shelfId"] << "' method='post' id='editForm'>" << "<input type='hidden' name='included' id='included'>" << "</form>";
+        %>
+        <div class = "menu">
+            <a href="/"><div class="menuItem" style="float: left;"><p>Home</p></div></a>
+            <a href="/shelves"><div class="menuItem" style="float: left;"><p>My Shelves</p></div></a>
+            <div class="menuItem" style="float: left; background-color: #5E8B7E;"><p>Shelf</p></div>
+            <a href="javascript:void(0)" onclick='document.getElementById("logoutForm").submit()'><div class="menuItem" style="float: right;"><p>Logout</p></div></a>
+        </div>
+        <div class="pagePart" id="recipes" style="width: 65%; float: left; display: block;">
+            <!--Recipes are added here-->
+        </div>
+        <div class="pagePart" id="editableRecipes" style="width: 65%; float: left; display: none;">
+            <!--Recipes are added here-->
+        </div>
+        <div class="pagePart" id="firstPart" style="display: block;">
+            <h3>Add Or Delete Recipes</h3><br>
+            <input type="button" value="Edit Recipes" class="formPartButton" onclick="showEditPage()" style="width: 60%;"><br>
+        </div>
+        <div class="pagePart" id="secondPart" style="display: none;">
+            <h3>Edit Recipes</h3><br>
+            <p>Recipes Which Have Green Borders Will Be In Your Shelf. You Can Unselect A Recipe To Remove It From Your Shelf.</p><br>
+            <input type="button" value="Done" class="formPartButton" onclick="editSelected()">
+            <input type="button" value="Cancel" class="formPartButton" onclick="cancelEdit()">
+        </div>
+        <script src="recipe_class.js"></script>
+        <%
+            cout << "<script src='shelf_recipes.js?shelfId=" << context["shelfId"] << "'></script>";
+            cout << "<script>var shelfId = " << context["shelfId"] << ";</script>";
+        %>
+        <script src="add_shelf_recipes.js"></script>
+        <script src="shelf_recipes_selection.js"></script>
+    </body>
+</html>

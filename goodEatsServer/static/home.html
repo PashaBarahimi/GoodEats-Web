@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="home_style.css">
+    <script src="home_forms_actions.js"></script>
+    <head>
+        <title>GoodEats</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <img src="logo_v2.png" alt="goodeats" style="width: 10%; margin-left: 45%; margin-right: 45%; margin-top: 20px;">
+        <div id = "login" class="form" style="display: block;">
+            <form id = "lForm" action="/login" method="POST">
+                <label for="lUsername">Username:</label><br>
+                <input type="text" id="lUsername" name="lUsername" placeholder="Enter your username.." required><br>
+                <label for="lPWord">Password:</label><br>
+                <input type="password" id="lPWord" name="lPWord" placeholder="Enter your password.." required><br>
+                <input type="checkbox" id="lShowPWord" onclick="checkPWord(this, document.getElementById('lPWord'))">
+                <label for="lShowPWord">Show Password</label><br>
+                <input type="submit" value="Login">
+                <p>Don't have an account? <a href="javascript:void(0)"
+                     onclick="changePage(document.getElementById('login'), document.getElementById('signup'),
+                      document.getElementById('lForm'), document.getElementById('lPWord'))">Sign Up</a></p>
+            </form>
+        </div>
+        <div id = "signup" class="form" style="display: none;">
+            <form id ="sForm" action="/sign_up" method="POST">
+                <label for="sUsername">Username:</label><br>
+                <input type="text" id="sUsername" name="sUsername" placeholder="Enter your username.." required><br>
+                <label for="sPWord">Password:</label><br>
+                <input type="password" id="sPWord" name="sPWord" placeholder="Enter your password.." required><br>
+                <input type="checkbox" id="sShowPWord" onclick="checkPWord(this, document.getElementById('sPWord'))">
+                <label for="sShowPWord">Show Password</label><br><br>
+                <label for="userType">User Type:</label><br>
+                <select id="userType" name="userType" style="font-family: fantasy Helvetica Arial;">
+                    <option value="normalUser">Normal User</option>
+                    <option value="chef">Chef</option>
+                </select><br><br>
+                <input type="submit" value="Sign Up">
+                <p>Already have an account? <a href ="javascript:void(0)" 
+                onclick="changePage(document.getElementById('signup'), document.getElementById('login'),
+                    document.getElementById('sForm'), document.getElementById('sPWord'))">Login</a></p>
+            </form>
+        </div>
+    </body>
+</html>

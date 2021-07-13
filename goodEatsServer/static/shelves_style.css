@@ -1,0 +1,38 @@
+#addShelf {
+    width: 30%;
+    float: right;
+    text-align: center;
+    opacity: 0.9;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #2F5D62;
+    color: #A7C4BC;
+    border-radius: 6px;
+    position: sticky;
+    font-family: fantasy Helvetica Arial;
+}
+
+p.shelf {
+    opacity: 0.9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #2F5D62;
+    font-size: x-large;
+    width: 30%;
+    display: inline-block;
+    padding: 10px;
+    background-color: #A7C4BC;
+    opacity: 0.95;
+    border-radius: 6px;
+    text-align: center;
+    margin: 30px;
+}
+
+p.shelf:hover{
+    background-color: #DFEEEA;
+}
+
+img.shelfImage {
+    width: 100%;
+}

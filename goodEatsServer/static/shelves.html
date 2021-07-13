@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="shelves_style.css">
+    <link rel="stylesheet" href="common_style.css">
+    <head>
+        <title>Shelves</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="/logout" method="POST" id="logoutForm"></form>
+        <div class = "menu">
+            <a href="/"><div class="menuItem" style="float: left;"><p>Home</p></div></a>
+            <div class="menuItem" style="float: left; background-color: #5E8B7E;"><p>My Shelves</p></div>
+            <a href="javascript:void(0)" onclick='document.getElementById("logoutForm").submit()'><div class="menuItem" style="float: right;"><p>Logout</p></div></a>
+        </div>
+        <div class="pagePart" id="shelves" style="width: 65%; float: left;">
+            <!--Shelves are added here-->
+        </div>
+        <div class="pagePart" id="addShelf">
+            <form action="/shelves" method="post">
+                <h3>Make a New Shelf</h3>
+                <label for="shelfName">Shelf Name: </label>
+                <input type="text" placeholder="Name" id="shelfName" name="shelfName" class="formPart"><br><br>
+                <input type="submit" value="Make Shelf" class="formPartButton">
+            </form>
+        </div>
+        <script src="shelf_class.js"></script>
+        <script src="all_shelves.js"></script>
+        <script src="add_shelf.js"></script>
+    </body>
+</html>

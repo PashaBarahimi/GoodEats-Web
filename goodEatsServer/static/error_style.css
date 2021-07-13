@@ -1,0 +1,38 @@
+body {
+    background-image: url("background1_blurred.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+    font-family: fantasy Helvetica Arial;
+    background-color: #080c0a;
+}
+
+div {
+    text-align: center;
+    opacity: 0.9;
+    margin: auto;
+    width: 35%;
+    border-radius: 5px;
+    background-color: #3d3939;
+    color: #ffffff;
+    font-size: larger;
+    padding: 60px 20px;
+    margin-top: 100px;
+    display: block;
+}
+
+input[type=submit] {
+    font-family: fantasy Helvetica Arial;
+    width: 100%;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 14px 20px;
+    margin: 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    font-family: fantasy Helvetica Arial;
+    background-color: #45a049;
+}

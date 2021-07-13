@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="user_style.css">
+    <link rel="stylesheet" href="common_style.css">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="/reset_filter" method="POST" id="resetFilterForm"></form>
+        <form action="/logout" method="POST" id="logoutForm"></form>
+        <script src="range_check.js"></script>
+        <div class = "menu">
+            <div class="menuItem" style="float: left; background-color: #5E8B7E;"><p>Home</p></div>
+            <a href="/shelves"><div class="menuItem" style="float: left;"><p>My Shelves</p></div></a>
+            <a href="javascript:void(0)" onclick='document.getElementById("logoutForm").submit()'><div class="menuItem" style="float: right;"><p>Logout</p></div></a>
+        </div>
+            <div class="pagePart" id="recipes" style="width: 65%; float: left;">
+                <!--Recipes are added here-->
+            </div>
+            <div class="pagePart" id="filters">
+                <form action="/filter" method="POST">
+                    <h3>Filters</h3><br>
+                    <label for="tag">Tag: </label>
+                    <input type="text" name="tag" id="tag" class="formPart" placeholder="Tag"><br><br><br>
+                    <input type="checkbox" name="vegetarian" id="vegetarian">
+                    <label for="vegetarian">Only Vegetarian Recipes</label><br><br><br>
+                    <div id="rating">
+                        <label for="rating">Ratings: </label><br>
+                        <label for="minRating">Min: </label>
+                        <input type="range" name="minRating" id="minRating" class="formPart" min="0" max="5" value="0" step="0.1" 
+                        onclick="rangeCheck(this, document.getElementById('maxRating'), true, document.getElementById('minRatingLabel'))">
+                        <label for="minRating" id="minRatingLabel">0</label><br><br>
+                        <label for="maxRating">Max: </label>
+                        <input type="range" name="maxRating" id="maxRating" class="formPart" min="0" max="5" value="5" step="0.1" 
+                        onclick="rangeCheck(document.getElementById('minRating'), this, false, document.getElementById('maxRatingLabel'))">
+                        <label for="maxRating" id="maxRatingLabel">5</label><br><br><br>
+                    </div>
+                    <div id="readyTime">
+                        <label for="readyTime">Ready Time: </label><br>
+                        <label for="minTime">Min: </label>
+                        <input type="range" name="minTime" id="minTime" class="formPart" min="0" max="200" value="0" step="10" 
+                        onclick="rangeCheck(this, document.getElementById('maxTime'), true, document.getElementById('minTimeLabel'))">
+                        <label for="minTime" id="minTimeLabel">0</label><br><br>
+                        <label for="maxTime">Max: </label>
+                        <input type="range" name="maxTime" id="maxTime" class="formPart" min="0" max="200" value="200" step="10"
+                         onclick="rangeCheck(document.getElementById('minTime'), this, false, document.getElementById('maxTimeLabel'))">
+                        <label for="maxTime" id="maxTimeLabel">200</label><br><br><br>
+                    </div>
+                    <input type="submit" value="Filter" class="formPartButton">
+                    <input type="button" value="Reset" onclick="document.getElementById('resetFilterForm').submit()" class="formPartButton" style="padding: 12px 20px; margin-left: 5px;">
+                </form>
+            </div>
+            <script src="recipe_class.js"></script>
+            <script src="all_recipes.js"></script>
+            <script src="add_recipe.js"></script>
+            <script src="filter_class.js"></script>
+            <script src="user_filter.js"></script>
+            <script src="filter_status.js"></script>
+    </body>
+</html>

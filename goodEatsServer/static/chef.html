@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="common_style.css">
+    <link rel="stylesheet" href="chef_style.css">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="/logout" method="POST" id="logoutForm"></form>
+        <form action="/delete_recipes" method="post" id="deleteForm">
+            <input type="hidden" name="deletedRecipes" id="deletedRecipes">
+        </form>
+        <div class = "menu">
+            <div class="menuItem" style="float: left; background-color: #5E8B7E;"><p>Home</p></div>
+            <a href="javascript:void(0)" onclick='document.getElementById("logoutForm").submit()'><div class="menuItem" style="float: right;"><p>Logout</p></div></a>
+        </div>
+        <div class="pagePart" id="recipes" style="width: 65%; float: left; display: block;">
+            <!--Recipes are added here-->
+        </div>
+        <div class="pagePart" id="editableRecipes" style="width: 65%; float: left; display: none;">
+            <!--Recipes are added here-->
+        </div>
+        <div class="pagePart" id="addRecipe" style="display: block;">
+            <form action="/recipe" method="post" id="addForm">
+                <div style="text-align: center;">
+                    <h3>Edit Recipes</h3>
+                    <input type="button" value="Delete Recipes" class="formPartButton" onclick="showDeletingPage()" style="width: 60%"><br>
+                    <h3>Add Recipe</h3>
+                </div>
+                <label for="recipeName">Name: </label><br>
+                <input type="text" name="recipeName" id="recipeName" class="formPart" placeholder="Name" required><br>
+                <label for="ingredients">Ingredients: </label><br>
+                <input type="text" name="ingredients" id="ingredients" class="formPart" placeholder="Separate By Comma ','"required><br>
+                <label for="readyTime">Ready Time: </label><br>
+                <input type="number" name="readyTime" id="readyTime" placeholder="Ready Time" class="formPart" required><br>
+                <label for="tags">Tags: </label><br>
+                <input type="text" name="tags" id="tags" placeholder="Separate By Comma ','" class="formPart"><br>
+                <label for="imageAddress">Image Address: </label><br>
+                <input type="url" name="imageAddress" id="imageAddress" placeholder="Image Address" class="formPart"><br><br>
+                <input type="checkbox" name="vegetarian" id="vegetarian">
+                <label for="vegetarian">Recipe Is Vegetarian</label><br><br>
+                <div style="text-align: center;">
+                    <input type="submit" value="Add Recipe" class="formPartButton">
+                </div>
+            </form>
+        </div>
+        <div class="pagePart" id="deleteRecipe" style="display: none; text-align: center;">
+            <h3>Delete Recipes</h3><br>
+            <p>Select Recipes That You Want To Delete By Clicking On Them And Then Press Done<br><br>Recipes With Red Borders Will Be Deleted</p><br>
+            <input type="button" value="Delete" class="formPartButton" onclick="deleteSelected()">
+            <input type="button" value="Cancel" class="formPartButton" onclick="cancelEdit()">
+        </div>
+        <script src="recipe_class.js"></script>
+        <script src="chef_recipes_list.js"></script>
+        <script src="add_chef_recipes.js"></script>
+        <script src="chef_recipes_selection.js"></script>
+    </body>
+</html>
