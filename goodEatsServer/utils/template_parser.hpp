@@ -8,6 +8,23 @@
 #include <map>
 #include <string>
 
+namespace SysCmd
+{
+#ifdef _WIN32
+  const std::string rm = "del ";
+  const std::string programStart = "";
+  const std::string mkdir = "mkdir ";
+  const std::string slash = "\\";
+  const std::string fileExtention = ".exe";
+#else
+  const std::string rm = "rm -f ";
+  const std::string programStart = "./";
+  const std::string mkdir = "mkdir ";
+  const std::string slash = "/";
+  const std::string fileExtention = ".o";
+#endif
+}
+
 const std::string beginCodeBlockTag = "<%";
 const std::string endCodeBlockTag = "%>";
 const std::string utilitiesHeaderPath = "goodEatsServer/utils/utilities.hpp";
@@ -20,7 +37,8 @@ const std::string outputFolder = ".template";
 const std::string mapFile = "map.txt";
 const std::string localTemplate(const int parserNum);
 
-class TemplateParser {
+class TemplateParser
+{
 private:
   static int lastParserNum;
   int parserNum;
@@ -47,7 +65,8 @@ private:
   void compileCode();
   void deleteExecutable();
   void deleteLocalTemplate();
-  class TemplateUtils {
+  class TemplateUtils
+  {
   public:
     static void runSystemCommand(std::string command, std::string errorMessage);
     static int writeMapToFile(std::string fname,
