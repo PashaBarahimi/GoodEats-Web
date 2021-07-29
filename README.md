@@ -12,7 +12,7 @@ The server runs on port 5000. Port number can be changed in `goodEatsServer/good
 
 ## How To Use
 
-Run the executable file and in your browser**(preferably FireFox)** go to `localhost:5000`.  
+Run the executable file and in your browser **(preferably FireFox)** go to `localhost:5000`.  
 The login page should be appeared.
 
 ## License
