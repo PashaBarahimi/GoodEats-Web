@@ -19,8 +19,8 @@ The login page should appear.
 ## Features
 
 Accounts can be created either as a chef or a normal user.  
-A chef can make recipes, see their recipes' rating or delete them.
-A normal can see all the recipes, filter them by tags, ready time, rating and vegetarianism in the first page.  
+A chef can make recipes, see their recipes' rating or delete them.  
+A normal user can see all the recipes, filter them by tags, ready time, rating and vegetarianism in the first page.  
 Recipes can be rated by normal users by clicking on them.  
 A normal user can also make shelves, put recipes in it, or delete recipes from it.
 
