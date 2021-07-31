@@ -3,6 +3,7 @@
 -   [GoodEats](#GoodEats)
     -   [About](#About)
     -   [How To Use](#How-To-Use)
+    -   [Features](#Features)
     -   [License](#License)
 
 ## About
@@ -13,7 +14,15 @@ The server runs on port 5000. Port number can be changed in `goodEatsServer/good
 ## How To Use
 
 Run the executable file and enter `localhost:5000` on your browser's url **(preferably FireFox)**.  
-The login page should be appeared.
+The login page should appear.
+
+## Features
+
+Accounts can be created either as a chef or a normal user.  
+A chef can make recipes, see their recipes' rating or delete them.
+A normal can see all the recipes, filter them by tags, ready time, rating and vegetarianism in the first page.  
+Recipes can be rated by normal users by clicking on them.  
+A normal user can also make shelves, put recipes in it, or delete recipes from it.
 
 ## License
 
